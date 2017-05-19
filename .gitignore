@@ -1,0 +1,5 @@
+.DS_Store
+npm-debug.log
+node_modules/
+app/server/config/secrets.js
+app/client/dist/assets/*
