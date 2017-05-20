@@ -1,11 +1,10 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { hello, goodbye } from './components/lib'
+var React = require('react');
+var ReactDOM = require('react-dom');
+var App = require('./components/App');
+require('./stylesheets/index.css');
+require('./stylesheets/style.scss');
 
-render(
-	<div>
-		{hello}
-		{goodbye}
-	</div>,
-	document.getElementById('react-container')
-)
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);

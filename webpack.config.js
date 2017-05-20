@@ -1,28 +1,44 @@
-const webpack = require('webpack');
-const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
-	entry: path.join(__dirname, '/app/client/src/index.js'),
+	entry: './app/client/src/index.js',
 	output: {
-		path: path.join(__dirname, '/app/client/dist/assets'),
-		filename: "bundle.js",
-		publicPath: "assets"
+		path: path.resolve(__dirname, 'app/client/dist'),
+		filename: 'index_bundle.js',
+	},
+	devServer: {
+		inline: true,
+		port: 3000
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.js$/,
 				exclude: /(node_modules)/,
-				loader: ["babel-loader"]
+				use: ["babel-loader"]
 			},
 			{
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader']
       },
 			{
 				test: /\.scss$/,
-				loader: ['style-loader', 'css-loader', 'sass-loader']
+				use: ['style-loader', 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+			  use: ["file-loader?name=img/img-[hash:6].[ext]"]
+			},
+			{
+				test: /\.(mp4)$/,
+				use: ["file-loader?name=video/video-[hash:6].[ext]"]
 			}
 		]
-	}
+	},
+	plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'app/client/src/index.html')
+    })
+  ]
 }
