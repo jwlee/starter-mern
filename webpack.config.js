@@ -27,11 +27,11 @@ module.exports = {
 				use: ['style-loader', 'css-loader', 'sass-loader']
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
+				test: /\.(png|jpg|gif|jpeg|svg|)$/,
 			  use: ["file-loader?name=img/img-[hash:6].[ext]"]
 			},
 			{
-				test: /\.(mp4)$/,
+				test: /\.(mp4|ogg)$/,
 				use: ["file-loader?name=video/video-[hash:6].[ext]"]
 			}
 		]
