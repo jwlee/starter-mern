@@ -1,4 +1,4 @@
-var axios = require('axios');
+import axios from 'axios';
 
 module.exports = {
   fetchRandomJoke: function () {

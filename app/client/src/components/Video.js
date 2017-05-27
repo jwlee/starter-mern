@@ -1,5 +1,6 @@
-var React = require('react');
-var api = require('../utils/api');
+import React from 'react';
+import api from '../utils/api';
+
 
 class Video extends React.Component {
   constructor(props) {

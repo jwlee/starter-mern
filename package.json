@@ -2,6 +2,9 @@
   "name": "starter-mern",
   "version": "1.0.0",
   "description": "Starter for Fullstack JavaScript Development: MongoDB, Node.js, React.js",
+  "authors": [
+    "James Lee <jwlee11@illinois.edu>"
+  ],
   "scripts": {
     "start": "webpack -p && nodemon --exec node starter.js --ignore ./client/src",
     "server": "nodemon --exec node starter.js --ignore ./client/src",

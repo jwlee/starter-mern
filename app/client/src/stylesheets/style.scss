@@ -1,7 +1,8 @@
 $bg-color: white;
-$text-color: black;
+$border-color: orange;
 
 .container {
 	background-color: $bg-color;
-	color: $text-color;
+	border: $border-color;
+	border-style: solid;
 }
