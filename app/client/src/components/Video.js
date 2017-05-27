@@ -7,16 +7,16 @@ class Video extends React.Component {
     this.state = {
       joke: 'null'
     };
+  }
 
-    // use api to get a joke
-    api.fetchRandomJoke()
-      .then(function (joke) {
-        this.setState(function () {
-          return {
-            joke: joke
-          }
-        });
-    }.bind(this));
+ componentDidMount() {
+    this.getJoke();
+  }
+
+  getJoke() {
+    return api.fetchRandomJoke().then((data) => {
+      this.setState({ joke: data });
+    });
   }
 
   render() {
