@@ -29,8 +29,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
-//load frontend
-app.use(express.static(__dirname + './../client/dist/'));
 
 // Use routes as a module (see index.js)
 require('./routes')(app, router);

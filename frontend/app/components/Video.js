@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../utils/api';
-
+import corgi_video from '../media/corgiVideo.mp4';
 
 class Video extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Video extends React.Component {
       <div className='home-container'>
         <h2> {this.state.joke} </h2>
         <video width="320" height="240" controls>
-          <source src={require('../data/corgiVideo.mp4')} type="video/mp4"/>
+          <source src={corgi_video} type="video/mp4"/>
         Your browser does not support the video tag.
         </video>
       </div>
